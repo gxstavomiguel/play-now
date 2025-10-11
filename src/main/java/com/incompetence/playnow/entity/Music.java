@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.http.ResponseEntity;
+
+import java.util.Optional;
 
 @Entity
 @Table(name = "music")
@@ -18,6 +21,7 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,4 +38,5 @@ public class Music {
 
     @Column(nullable = false)
     private int durationSeconds;
+
 }
