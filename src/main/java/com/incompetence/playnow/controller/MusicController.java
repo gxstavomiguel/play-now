@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +33,7 @@ public class MusicController {
     @GetMapping
     public ResponseEntity<List<Music>> findAll() {
         List<Music> musicList = musicService.findAll();
-        return ResponseEntity.ok(musicList); // Retorna [] se vazio
+        return ResponseEntity.ok(musicList);
     }
 
     @GetMapping("/search")
